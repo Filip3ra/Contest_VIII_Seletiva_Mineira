@@ -27,11 +27,9 @@ int main(int argc, char const *argv[]){
     int cont = 0;
     vector<int> myvec;
 
-    W = F = S = 1;
+    cin >> W >> F >> S;
 
-    while ( W && F && S != 0){
-
-        cin >> W >> F >> S;
+    while ( W && F && S != 0){        
         
         for (int i = 0; i < W; i++){
             cin >> w;
@@ -59,6 +57,8 @@ int main(int argc, char const *argv[]){
 
         qtd_packages = 0;
         myvec.clear();
+        
+        cin >> W >> F >> S;
     }
     
 
