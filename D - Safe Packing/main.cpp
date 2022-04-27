@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
  
@@ -24,27 +25,49 @@ int main(int argc, char const *argv[]){
     int W, F, S, w;
     int qtd_packages = 0;
     int cont = 0;
-
-    cin >> W >> F >> S;
-
     vector<int> myvec;
-    for (int i = 0; i < W; i++){
-        
-        cin >> w;
-        if(isFibonacci(w))
-            qtd_packages++;
-        else{
 
-            ++cont;
-            while(!isFibonacci(w+cont)){
+    W = F = S = 1;
+
+    while ( W && F && S != 0){
+
+        cin >> W >> F >> S;
+        
+        for (int i = 0; i < W; i++){
+            cin >> w;
+            if(isFibonacci(w))  // se w for fibonacci então é um pacote que será empacotado
+                qtd_packages++;
+            else{
                 ++cont;
+                while(!isFibonacci(w+cont)) // se não, calcula quanto de filling vou precisar usar
+                    ++cont;
             }           
-            
             myvec.push_back(cont);
-            cont = 0;
-        }        
+            cont = 0;     
+        }
+        
+        sort(myvec.begin(), myvec.end()); // ordeno o vetor de filling 
+
+        for (int i = 1; i < myvec.size(); i++){
+
+            F = F - myvec[i];            
+            if( F >= 0)
+                ++qtd_packages; // vou empacotar todos que couberem dentro da qtd de filling
+        }
+
+        cout << qtd_packages << endl;
+
+        qtd_packages = 0;
+        myvec.clear();
     }
     
+
+
+    return 0;
+}
+
+
+/*
     int a;
 
     cout << "qtd = " << qtd_packages << "\n" << "restantes = ";
@@ -54,9 +77,7 @@ int main(int argc, char const *argv[]){
         cout << a << " ";
     }
 
-    return 0;
-}
-
+*/
 
 
 
