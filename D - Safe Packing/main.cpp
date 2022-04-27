@@ -57,7 +57,7 @@ int main(int argc, char const *argv[]){
 
         qtd_packages = 0;
         myvec.clear();
-        
+
         cin >> W >> F >> S;
     }
     
@@ -67,17 +67,6 @@ int main(int argc, char const *argv[]){
 }
 
 
-/*
-    int a;
-
-    cout << "qtd = " << qtd_packages << "\n" << "restantes = ";
-    while(!myvec.empty()){
-        a = myvec.back();
-        myvec.pop_back();
-        cout << a << " ";
-    }
-
-*/
 
 
 
