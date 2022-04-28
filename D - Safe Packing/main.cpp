@@ -46,10 +46,11 @@ int main(int argc, char const *argv[]){
                         cont = fibo[i] - w;
                         i = 100;
                     }
-                }                
+                }
+                myvec.push_back(cont);
+                cont = 0;     
             }           
-            myvec.push_back(cont);
-            cont = 0;     
+            
         }
         
         sort(myvec.begin(), myvec.end()); // ordeno o vetor de filling 
