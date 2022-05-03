@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -18,17 +19,17 @@ int main(int argc, char const *argv[]){
             cin >> problems_values[i];
         }
 
-
+/*
         cout << "pontos: "; 
         for(int i=0;i<P; i++){
             cout << problems_values[i] << " ";
         }
         cout << endl;
-
+*/
 
         // Leitura do judge
         int team, problem_number, time, status, score;
-        int winner[2] = {-1,-1};
+        
         vector<vector<int>> table;
         vector<int> row;   
         vector<int> winners;
@@ -43,7 +44,8 @@ int main(int argc, char const *argv[]){
             else
                 score = 0;
 
-            cout << "Team = " << team << "\nScore = " << score << "\n\n";
+            
+            //cout << "Team = " << team << "\nScore = " << score << "\n\n";
 
             
 
@@ -70,22 +72,47 @@ int main(int argc, char const *argv[]){
         }
 
         int best = table[0][1];
+        int winner = table[0][0];
+        bool multiple_winners = false;
+        winners.push_back(table[0][0]); 
 
         for(int i=1; i<table.size(); i++){
-            if(table[i][1] == best){
-                
+            if(table[i][1] > best){
+                best = table[i][1];
+                winner = table[i][0];
+                multiple_winners = false;
+                winners.clear();
+                winners.push_back(winner);
             }
-
+            else if(table[i][1] == best){
+                multiple_winners = true;
+                winners.push_back(table[i][0]);
+            }
         }
 
+        if(multiple_winners==false){
+            cout << "Contest " << N << " Winner: Team " << winner << endl;
+        }
+        else{
+            sort(winners.begin(), winners.end()); // ordena vetor
+            cout << "Contest " << N << " Winner:";
+            for(int i=0; i<winners.size(); i++){
+                cout << " Team " << winners[i];
+                if(i+1 < winners.size())
+                    cout << " and";
+                else
+                    cout << endl;
+            }
+        }
 
+/*
         for(int i=0; i<table.size(); i++){
             for(int j=0; j<table[i].size(); j++){
                 cout << table[i][j] << " ";
             }
             cout << endl;
         }
-
+*/
         cin >> N >> P >> T >> R;
 
     }
