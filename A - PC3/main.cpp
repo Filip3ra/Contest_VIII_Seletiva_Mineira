@@ -10,13 +10,15 @@ int main(int argc, char const *argv[]){
 
     cin >> N >> P >> T >> R;
 
-    int problems_values[15];
+    vector<int> problems_values;
+    int x = 0;
 
     while(N != P != T != R != 0){
 
         // Prenche o vetor de pontos
         for(int i=0; i<P; i++){
-            cin >> problems_values[i];
+            cin >> x;
+            problems_values.push_back(x);
         }
 
 /*
@@ -32,7 +34,6 @@ int main(int argc, char const *argv[]){
         
         vector<vector<int>> table;
         vector<int> row;   
-        vector<int> winners;
 
         for(int i=0; i<R; i++){
             // leitura dos dados
@@ -74,6 +75,7 @@ int main(int argc, char const *argv[]){
         int best = table[0][1];
         int winner = table[0][0];
         bool multiple_winners = false;
+        vector<int> winners;
         winners.push_back(table[0][0]); 
 
         for(int i=1; i<table.size(); i++){
@@ -104,6 +106,12 @@ int main(int argc, char const *argv[]){
                     cout << endl;
             }
         }
+
+        winners.clear();
+        table.clear();
+        problems_values.clear();
+        row.clear();
+
 
 /*
         for(int i=0; i<table.size(); i++){
