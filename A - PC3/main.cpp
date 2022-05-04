@@ -2,6 +2,14 @@
 #include <vector>
 #include <algorithm>
 
+/*  -> Posso tentar fazer com que a submissão da mesma questão não resulte em 
+    mais de uma contagem de pontos
+
+    -> Posso tentar fazer com que a submissão da mesma questão, que previamente
+    estivera correta, fique errada e perca os pontos obtidos
+
+*/
+
 using namespace std;
 
 int main(int argc, char const *argv[]){
@@ -46,11 +54,8 @@ int main(int argc, char const *argv[]){
                 score = 0;
 
             
-            //cout << "Team = " << team << "\nScore = " << score << "\n\n";
+            //cout << "Team = " << team << "\nScore = " << score << "\n\n";    
 
-            
-
-            
             // confere se já tem esse time na tabela
             bool flag = false;
             for(int i=0; i<table.size(); i++){
