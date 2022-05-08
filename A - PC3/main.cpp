@@ -54,10 +54,11 @@ int main(int argc, char const *argv[]){
                 score = 0;
 
             
-            //cout << "Team = " << team << "\nScore = " << score << "\n\n";    
+            //cout << "Team = " << team << "\nScore = " << score << "\n\n";   
+            //cout << "SIZE = " << table.size() << endl; 
 
             // confere se já tem esse time na tabela
-            bool flag = false;
+            bool flag = false;          
             for(int i=0; i<table.size(); i++){
                 if(table[i][0] == team){
                     table[i][1] += score;
@@ -73,6 +74,7 @@ int main(int argc, char const *argv[]){
                 table.push_back(row);
 
                 row.clear();
+                score = 0;
             }
             
         }
@@ -89,7 +91,6 @@ int main(int argc, char const *argv[]){
                 winner = table[i][0];
                 multiple_winners = false;
                 winners.clear();
-                winners.push_back(winner);
             }
             else if(table[i][1] == best){
                 multiple_winners = true;
