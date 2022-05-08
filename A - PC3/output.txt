@@ -1,36 +1,5 @@
-SIZE = 0
-SIZE = 1
-SIZE = 2
-SIZE = 2
-SIZE = 3
-SIZE = 3
 Contest 1 Winner: Team 17
-SIZE = 0
-SIZE = 1
-SIZE = 2
-SIZE = 2
-SIZE = 3
-SIZE = 4
-SIZE = 4
-Contest 2 Winner: Team 5 and Team 10
-SIZE = 0
-SIZE = 1
-SIZE = 2
-SIZE = 2
-SIZE = 3
-SIZE = 4
-SIZE = 4
+Contest 2 Winner: Team 5 and Team 10 and Team 17
 Contest 3 Winner: Team 3 and Team 6
-SIZE = 0
-SIZE = 1
-SIZE = 2
-SIZE = 2
-SIZE = 3
-SIZE = 3
-SIZE = 3
-SIZE = 3
-SIZE = 3
-SIZE = 3
-SIZE = 3
-SIZE = 3
-Contest 4 Winner: Team 7
+Contest 4 Winner: Team 7 and Team 8 and Team 11
+Contest 5 Winner: Team 1
